@@ -6,6 +6,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Authors>Samuel Gasocn</Authors>
+    <Description>Lightweight .NET MAUI toolkit with Fluent icons, navigation service, and ViewModel/page lifecycle helpers.</Description>
+    <PackageProjectUrl>https://github.com/Samuel103/MauiToolkit.net</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Samuel103/MauiToolkit.net</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>maui;fluent-ui;icons;navigation;mvvm;dotnet</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +25,9 @@
   <ItemGroup>
     <MauiFont Include="FluentIcons/FluentSystemIcons-Regular.ttf" Alias="FluentIconsRegular" />
     <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="LICENSE" Pack="true" PackagePath="\" />
+    <None Include="THIRD_PARTY_NOTICES.md" Pack="true" PackagePath="\" />
+    <None Include="FluentIcons/FluentSystemIcons-Regular.ttf" Pack="true" PackagePath="contentFiles/any/any/Assets/Fonts" />
   </ItemGroup>
 
 </Project>
