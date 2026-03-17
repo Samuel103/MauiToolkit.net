@@ -1,5 +1,7 @@
 # MauiToolkit.net
 
+> **Version 1.0.0** — First official NuGet package release
+
 A lightweight .NET MAUI toolkit that provides:
 
 - Fluent UI icon controls (`FluentIcon`, `FluentIconButton`)
@@ -43,7 +45,7 @@ Methods:
 
 Namespace:
 
-- `MauiToolkit.net.Services`
+- `MauiToolkit.Services`
 
 Behavior:
 
@@ -191,3 +193,26 @@ Then pack and publish:
 dotnet pack MauiToolkit.net/MauiToolkit.net.csproj -c Release
 dotnet nuget push <path-to-nupkg> --api-key <NUGET_API_KEY> --source https://api.nuget.org/v3/index.json
 ```
+
+---
+
+## Changelog
+
+### Version 1.0.0 (First Release)
+
+**New Features & Improvements:**
+
+- **Enhanced Navigation Safety**: `NavigationService` now validates `Shell.Current` availability and confirms resolved pages are valid MAUI `Page` instances.
+- **Robust Page Resolution**: Improved ViewModel→Page type resolution with caching, ambiguity detection, and clear error messages for missing or duplicate pages.
+- **Safer Lifecycle Handling**: Removed `async void` event handlers in `ExtendedContentPage`. Lifecycle methods are now called with proper async/await and exception handling.
+- **Bindable Control Properties**: `FluentIconButton.Animate` is now a `BindableProperty`, enabling XAML binding and style integration.
+- **Complete NuGet Packaging**: Added `Microsoft.Maui.Controls` package reference, font asset inclusion via `MauiFont`, and README embedding.
+- **API Refactoring**: Namespace simplified from `MauiToolkit.net.Services` to `MauiToolkit.Services` for cleaner public API.
+- **Code Quality**: Removed unnecessary usings, fixed compiler warnings, and improved nullability handling.
+
+**Package Includes:**
+
+- Fluent System Icons font (`FluentSystemIcons-Regular.ttf`) bundled with library
+- Example application demonstrating all features (icon controls, navigation, lifecycle, loadable viewmodels)
+- Comprehensive README with setup and usage examples
+

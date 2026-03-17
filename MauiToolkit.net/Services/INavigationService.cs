@@ -1,6 +1,6 @@
 using MauiToolkit.ViewModel;
 
-namespace MauiToolkit.net.Services;
+namespace MauiToolkit.Services;
 
 public interface INavigationService
 {

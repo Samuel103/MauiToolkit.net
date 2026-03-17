@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Exemple"
     xmlns:icons="clr-namespace:MauiToolkit.Fluent;assembly=MauiToolkit.net"
     xmlns:pages="clr-namespace:Exemple.Pages"
-    Title="Exemple">
+    Title="Example">
     <Shell.Resources>
         <Style TargetType="TabBar">
             <Setter Property="Shell.NavBarIsVisible" Value="False"/>

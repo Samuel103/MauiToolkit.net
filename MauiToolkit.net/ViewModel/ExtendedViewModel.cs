@@ -1,4 +1,4 @@
-using MauiToolkit.net.Services;
+using MauiToolkit.Services;
 
 namespace MauiToolkit.ViewModel;
 

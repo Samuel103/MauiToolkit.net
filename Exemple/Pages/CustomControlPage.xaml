@@ -5,43 +5,49 @@
                                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                                 xmlns:viewModels="clr-namespace:Exemple.ViewModels;assembly=Exemple"
                                 xmlns:controls="clr-namespace:MauiToolkit.Controls;assembly=MauiToolkit.net"
+                                xmlns:icons="clr-namespace:MauiToolkit.Fluent;assembly=MauiToolkit.net"
                                 x:Class="Exemple.Pages.CustomControlPage">
     <ScrollView>
-        <StackLayout>
-            <Grid
-                RowSpacing="20">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                
-                <Label Grid.Column="0" 
-                       Grid.Row="0"
-                       TextColor="White"
-                       Text="Fluent Icon :"
-                       FontSize="20" />
-                
-                <controls:FluentIcon Grid.Row="0" 
-                                     Grid.Column="1" 
-                                     FontSize="24"
-                                     HorizontalOptions="Center"
-                                     Icon="TextColor" />
+        <VerticalStackLayout Padding="24" Spacing="18">
+            <Label Text="Fluent Controls" FontSize="26" FontAttributes="Bold" />
+            <Label Text="Demo of FluentIcon, FluentIconButton, and FluentIconSourceExtension." />
 
-                <Label Grid.Column="0" 
-                       Grid.Row="1" 
-                       TextColor="White"
-                       Text="Fluent Icon button :"
-                       FontSize="20" />
-                
-                <controls:FluentIconButton Grid.Row="1" 
-                                           Grid.Column="1" 
-                                           FontSize="24"
-                                           Icon="Add"/>
+            <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="16">
+                <Label Grid.Row="0" Grid.Column="0" Text="FluentIcon" FontAttributes="Bold" VerticalOptions="Center" />
+                <HorizontalStackLayout Grid.Row="0" Grid.Column="1" Spacing="14">
+                    <controls:FluentIcon Icon="Home" FontSize="28" />
+                    <controls:FluentIcon Icon="Mail" FontSize="28" />
+                    <controls:FluentIcon Icon="Star" FontSize="28" />
+                </HorizontalStackLayout>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="FluentIconButton" FontAttributes="Bold" VerticalOptions="Center" />
+                <HorizontalStackLayout Grid.Row="1" Grid.Column="1" Spacing="14">
+                    <controls:FluentIconButton Icon="Add" FontSize="28" Animate="True" />
+                    <controls:FluentIconButton Icon="Delete" FontSize="28" Animate="False" />
+                    <controls:FluentIconButton Icon="Send" FontSize="28" Animate="True" />
+                </HorizontalStackLayout>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="XAML Icon Source" FontAttributes="Bold" VerticalOptions="Center" />
+                <HorizontalStackLayout Grid.Row="2" Grid.Column="1" Spacing="14">
+                    <Image HeightRequest="28" WidthRequest="28">
+                        <Image.Source>
+                            <icons:FluentIconSourceExtension Icon="Settings" Size="24" />
+                        </Image.Source>
+                    </Image>
+                    <Image HeightRequest="28" WidthRequest="28">
+                        <Image.Source>
+                            <icons:FluentIconSourceExtension Icon="Camera" Size="24" />
+                        </Image.Source>
+                    </Image>
+                    <Image HeightRequest="28" WidthRequest="28">
+                        <Image.Source>
+                            <icons:FluentIconSourceExtension Icon="Cloud" Size="24" />
+                        </Image.Source>
+                    </Image>
+                </HorizontalStackLayout>
             </Grid>
-        </StackLayout>
+
+            <Button Text="Navigate to Profile via INavigationService" Command="{Binding NavigateToProfile}" />
+        </VerticalStackLayout>
     </ScrollView>
 </extensions:ExtendedContentPage>

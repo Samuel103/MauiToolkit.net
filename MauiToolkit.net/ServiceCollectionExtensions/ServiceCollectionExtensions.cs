@@ -1,5 +1,4 @@
-using MauiToolkit.Extensions;
-using MauiToolkit.net.Services;
+using MauiToolkit.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MauiToolkit.ServiceCollectionExtensions;

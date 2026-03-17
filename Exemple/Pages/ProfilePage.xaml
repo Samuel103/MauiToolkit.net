@@ -4,11 +4,32 @@
                          xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                          xmlns:viewModels="clr-namespace:Exemple.ViewModels;assembly=Exemple"
+                         xmlns:controls="clr-namespace:MauiToolkit.Controls;assembly=MauiToolkit.net"
+                         xmlns:icons="clr-namespace:MauiToolkit.Fluent;assembly=MauiToolkit.net"
                          xmlns:ext="clr-namespace:MauiToolkit.Extensions;assembly=MauiToolkit.net"
                          x:Class="Exemple.Pages.ProfilePage">
     <ScrollView>
-        <VerticalStackLayout>
-            <Label Text="Profile Page" TextColor="White" FontSize="30" HorizontalOptions="Center" />
+        <VerticalStackLayout Padding="24" Spacing="16">
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <controls:FluentIcon Icon="Person" FontSize="28" />
+                <Label Text="Profile Demo" FontSize="26" FontAttributes="Bold" />
+            </HorizontalStackLayout>
+
+            <Label Text="This page uses ExtendedViewModel&lt;string&gt; and implements LoadAsync(string)." />
+            <Label Text="LoadAsync is called from OnViewAppearingAsync (see console logs)." />
+
+            <Border StrokeThickness="1" Padding="14">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Value loaded by LoadAsync" FontAttributes="Bold" />
+                    <Label Text="{Binding UserName}" FontSize="18" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Image HeightRequest="40" WidthRequest="40" HorizontalOptions="Center">
+                <Image.Source>
+                    <icons:FluentIconSourceExtension Icon="CheckmarkCircle" Size="32" />
+                </Image.Source>
+            </Image>
         </VerticalStackLayout>
     </ScrollView>
 </ext:ExtendedContentPage>

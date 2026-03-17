@@ -1,6 +1,5 @@
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using MauiToolkit.Controls;
 using MauiToolkit.Fluent;
 
 namespace MauiToolkit.Controls;
@@ -9,18 +8,29 @@ public class FluentIconButton : Button
     public static readonly BindableProperty IconProperty =
         BindableProperty.Create(
             nameof(Icon),
-            typeof(Fluent.FluentIcons),
+            typeof(FluentIcons),
             typeof(FluentIconButton),
-            default(Fluent.FluentIcons),
+            default(FluentIcons),
             propertyChanged: OnIconChanged);
+
+    public static readonly BindableProperty AnimateProperty =
+        BindableProperty.Create(
+            nameof(Animate),
+            typeof(bool),
+            typeof(FluentIconButton),
+            true);
 
     public FluentIcons Icon
     {
         get => (FluentIcons)GetValue(IconProperty);
         set => SetValue(IconProperty, value);
     }
-    
-    public bool Animate { get; set; } = true;
+
+    public bool Animate
+    {
+        get => (bool)GetValue(AnimateProperty);
+        set => SetValue(AnimateProperty, value);
+    }
 
     public FluentIconButton()
     {

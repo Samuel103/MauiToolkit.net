@@ -1,6 +1,5 @@
 using System.Windows.Input;
-using Exemple.Pages;
-using MauiToolkit.net.Services;
+using MauiToolkit.Services;
 using MauiToolkit.ViewModel;
 
 namespace Exemple.ViewModels;
@@ -15,13 +14,30 @@ public class MainPageViewModel : ExtendedViewModel
         return base.OnViewAppearingAsync();
     }
 
-    public ICommand NavigateToExemple
+    public override Task OnViewDisappearingAsync()
+    {
+        Console.WriteLine($"{nameof(MainPageViewModel)} OnViewDisappearingAsync");
+        return base.OnViewDisappearingAsync();
+    }
+
+    public ICommand NavigateToCustomControls
     {
         get
         {
             return new Command(async () =>
             {
                 await NavigationService.NavigateTo<CustomControlViewModel>();
+            });
+        }
+    }
+
+    public ICommand NavigateToProfile
+    {
+        get
+        {
+            return new Command(async () =>
+            {
+                await NavigationService.NavigateTo<ProfileViewModel>();
             });
         }
     }
