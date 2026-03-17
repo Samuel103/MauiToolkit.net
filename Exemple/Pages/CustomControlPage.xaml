@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extensions:ExtendedContentPage x:TypeArguments="viewModels:CustomControlViewModel" xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                                xmlns:extensions="clr-namespace:MauiToolkit.Extensions;assembly=MauiToolkit.net"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                xmlns:viewModels="clr-namespace:Exemple.ViewModels;assembly=Exemple"
+                                xmlns:controls="clr-namespace:MauiToolkit.Controls;assembly=MauiToolkit.net"
+                                x:Class="Exemple.Pages.CustomControlPage">
+    <ScrollView>
+        <StackLayout>
+            <Grid
+                RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Label Grid.Column="0" 
+                       Grid.Row="0"
+                       TextColor="White"
+                       Text="Fluent Icon :"
+                       FontSize="20" />
+                
+                <controls:FluentIcon Grid.Row="0" 
+                                     Grid.Column="1" 
+                                     FontSize="24"
+                                     HorizontalOptions="Center"
+                                     Icon="TextColor" />
+
+                <Label Grid.Column="0" 
+                       Grid.Row="1" 
+                       TextColor="White"
+                       Text="Fluent Icon button :"
+                       FontSize="20" />
+                
+                <controls:FluentIconButton Grid.Row="1" 
+                                           Grid.Column="1" 
+                                           FontSize="24"
+                                           Icon="Add"/>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</extensions:ExtendedContentPage>
